@@ -1,0 +1,40 @@
+@mixin button($bc: $fiolet) {
+    padding: 11px 37px;
+    background-color: $bc;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 118%;
+    text-transform: uppercase;
+    color: $white;
+}
+
+@mixin hoverViolet {
+    &:hover {
+        background: #9468da;
+    }
+
+    &:active {
+        background: #6039a0;
+    }
+}
+
+@mixin hoverOrange {
+    &:hover {
+        background: #f8625a;
+    }
+
+    &:active {
+        background: #a4221c;
+    }
+}
+
+@mixin title2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 117%;
+    text-align: center;
+    @media (max-width: 767px) {
+        font-size: 32px;
+    }
+}
