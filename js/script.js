@@ -60,18 +60,18 @@ function hamburger() {
 /*===============tab===================================*/
 
 function tabs(elements) {
-  for (let index = 0; index < elements.length; index++) {
-    const item = elements[index];
+   for (let index = 0; index < elements.length; index++) {
+      const item = elements[index];
 
-    item.addEventListener("click", numbActiv);
+      item.addEventListener("click", numbActiv);
 
-    function numbActiv() {
-      elements.forEach(element => {
-        element.classList.remove('active')
-      });
-      item.classList.add('active')
-    }
-  }
+      function numbActiv() {
+         elements.forEach(element => {
+            element.classList.remove('active')
+         });
+         item.classList.add('active')
+      }
+   }
 }
 
 const fn = document.querySelectorAll('.fn');
@@ -108,3 +108,46 @@ const fn = document.querySelectorAll('.fn');
 // }
 
 /*===============popup=================================*/
+
+/*===============swiper================================*/
+// import "swiper/swiper.min.css";
+// import "../styles/styles.scss";
+
+import Swiper from "swiper";
+// import Swiper from 'swiper/dist/js/swiper.min.js';
+// const swiper = new Swiper('swiper', {
+//    // Optional parameters
+//    direction: 'vertical',
+//    loop: true,
+
+//    // If we need pagination
+//    // pagination: {
+//    //    el: '.swiper-pagination',
+//    // },
+
+//    // Navigation arrows
+//    navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//    },
+
+//    // And if we need scrollbar
+//    scrollbar: {
+//       el: '.swiper-scrollbar',
+//    },
+// });
+
+const initSlider = () => {
+   new Swiper(".swiper", {
+     loop: true,
+     slidesPerView: 3,
+     spaceBetween: 20,
+     initialSlide: 2,
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+   });
+ };
+
+/*===============swiper================================*/
