@@ -845,10 +845,11 @@ main {
 
 	&__btn {
 		@include button($akcent);
-		display: block;
+		//display: block;
 	}
 }
 .swiper-button-prev {
+	display: none;
 }
 .swiper-button-next {
 }
