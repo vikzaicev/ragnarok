@@ -6,7 +6,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="../ragnarok/img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="../ragnarok/img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../ragnarok/img/favicon-32x32.png">
-	<link rel="manifest" href="../ragnarok/img/site.webmanifest">
+	<!-- <link rel="manifest" href="../ragnarok/img/site.webmanifest"> -->
 	<link rel="mask-icon" href="../ragnarok/img/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
@@ -14,8 +14,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Rubik:regular,500,600,700" rel="stylesheet" />
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-<!-- <link href="
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+	<!-- <link href="
 https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 " rel="stylesheet"> -->
 	<title>Ragnarök</title>
@@ -36,12 +36,12 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 						</div>
 						<div class="header__menu menu">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="#" class="menu__link">editions</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">controller</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">ABOUT GAME</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Explore</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">news</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">FAQ</a></li>
+								<li class="menu__item"><a href="#editions" class="menu__link">editions</a></li>
+								<li class="menu__item"><a href="#controller" class="menu__link">controller</a></li>
+								<li class="menu__item"><a href="#aboutgame" class="menu__link">ABOUT GAME</a></li>
+								<li class="menu__item"><a href="#explore" class="menu__link">Explore</a></li>
+								<li class="menu__item"><a href="#news" class="menu__link">news</a></li>
+								<li class="menu__item"><a href="#faq" class="menu__link">FAQ</a></li>
 								<li class="menu__item">
 									<div class="menu__link long">
 										<div class="long__long2">
@@ -65,19 +65,19 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 						<div class="header__realease">Realease:</div>
 						<div class="header__infos">
 							<div class="header__info">
-								<div class="header__veal">20</div>
+								<div class="header__veal" id="days">00</div>
 								<div class="header__type">D</div>
 							</div>
 							<div class="header__info">
-								<div class="header__veal">20</div>
+								<div class="header__veal" id="hours">00</div>
 								<div class="header__type">H</div>
 							</div>
 							<div class="header__info">
-								<div class="header__veal">20</div>
+								<div class="header__veal" id="minutes">00</div>
 								<div class="header__type">M</div>
 							</div>
 							<div class="header__info">
-								<div class="header__veal">20</div>
+								<div class="header__veal" id="seconds">00</div>
 								<div class="header__type">S</div>
 							</div>
 						</div>
@@ -172,7 +172,7 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 					</div>
 				</div>
 			</section>
-			<section class="aboutgame" id="about game">
+			<section class="aboutgame" id="aboutgame">
 				<div class="aboutgame__contener">
 					<div class="aboutgame__title">
 						<h2>About Game</h2>
@@ -336,10 +336,13 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 									<img src="../ragnarok/img/news2.png" alt="news2">
 								</div>
 								<div class="swiper-slide__diskrip">
-									<p class="swiper-slide__text">God of War: Ragnarok is fast approaching. 
-										No wonder that we have been regularly receiving new information and materials related to the title in recent times. 
-										Last week, a trailer presenting the possibilities of the game on PlayStation 5 
-										hit the network , and a little earlier we learned that the work on the production was completed . Meanwhile, it turns out that the upcoming sequel to the adventures of Kratos and Atreus will receive a major update on release.</p>
+									<p class="swiper-slide__text">God of War: Ragnarok is fast approaching.
+										No wonder that we have been regularly receiving new information and materials
+										related to the title in recent times.
+										Last week, a trailer presenting the possibilities of the game on PlayStation 5
+										hit the network , and a little earlier we learned that the work on the
+										production was completed . Meanwhile, it turns out that the upcoming sequel to
+										the adventures of Kratos and Atreus will receive a major update on release.</p>
 									<button class="swiper-slide__btn">read</button>
 								</div>
 							</div>
@@ -349,13 +352,19 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 								<div class="swiper-slide__subtitle">God of War Ragnarok </div>
 								<div class="swiper-slide__date">19/10/2022</div>
 							</div>
-							<div class="swiper-slide__title">is the final chapter in an epic story. See the new video</div>
+							<div class="swiper-slide__title">is the final chapter in an epic story. See the new video
+							</div>
 							<div class="swiper-slide__info">
 								<div class="swiper-slide__image">
 									<img src="../ragnarok/img/news3.png" alt="news3">
 								</div>
 								<div class="swiper-slide__diskrip">
-									<p class="swiper-slide__text">The highly anticipated game God of War: Ragnarok will debut in just over twenty days. On this occasion, representatives of the Santa Monica studio together with Sony decided to release a new trailer dedicated to the epic history of Kratos and Atreus - in this way we have received confirmation that Ragnarok is the final chapter of the adventures of the god of war.</p>
+									<p class="swiper-slide__text">The highly anticipated game God of War: Ragnarok will
+										debut in just over twenty days. On this occasion, representatives of the Santa
+										Monica studio together with Sony decided to release a new trailer dedicated to
+										the epic history of Kratos and Atreus - in this way we have received
+										confirmation that Ragnarok is the final chapter of the adventures of the god of
+										war.</p>
 									<button class="swiper-slide__btn">read</button>
 								</div>
 							</div>
@@ -371,7 +380,11 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 									<img src="../ragnarok/img/news1.png" alt="news1">
 								</div>
 								<div class="swiper-slide__diskrip">
-									<p class="swiper-slide__text">Familiar characters will return to the game, but also completely new ones. We are talking here about Thor, presented as a brutal and mentally unstable performer of "dirty work" in the services of Odin , as well as the ruler of the gods himself, who left his mark on the events of the previous installment, although he did not appear in it personally.</p>
+									<p class="swiper-slide__text">Familiar characters will return to the game, but also
+										completely new ones. We are talking here about Thor, presented as a brutal and
+										mentally unstable performer of "dirty work" in the services of Odin , as well as
+										the ruler of the gods himself, who left his mark on the events of the previous
+										installment, although he did not appear in it personally.</p>
 									<button class="swiper-slide__btn">read</button>
 								</div>
 							</div>
@@ -390,15 +403,63 @@ https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css
 								fill="white" />
 						</svg></div>
 			</section>
-			<section class="" id="">
-				<div class="__contener contener">
-
+			<section class="faq" id="faq">
+				<div class="faq__contener contener">
+					<div class="faq__title">
+						<h2>FAQ</h2>
+					</div>
+					<div class="faq__items">
+						<div class="faq__item">
+							<div class="faq__top">
+								<div class="faq__question">When is the next God of War coming out?</div>
+								<span class="faq__plus"></span>
+							</div>
+							<div class="faq__botom">
+								<p>God of War Ragnarök will release on <span class="faq__span">November 9, 2022.</span>
+									To get the latest updates on release timing, make sure you follow Santa Monica
+									Studio on Twitter, Instagram and Facebook! </p>
+							</div>
+						</div>
+						<div class="faq__item">
+							<div class="faq__top">
+								<div class="faq__question">Will God of War Ragnarök have an upgrade path?</div>
+								<span class="faq__plus"></span>
+							</div>
+							<div class="faq__botom">
+								<p>God of War Ragnarök will release on <span class="faq__span">November 9, 2022.</span>
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__contener contener">
-
+				<div class="footer__top">
+					<div class="footer__menu menu footer__menu_footer">
+						<ul class="menu__list menu__list_footer">
+							<li class="menu__item menu__item_footer"><a href="#editions" class="menu__link menu__link_footer">editions</a></li>
+							<li class="menu__item menu__item_footer"><a href="#controller" class="menu__link menu__link_footer">controller</a></li>
+							<li class="menu__item menu__item_footer"><a href="#aboutgame" class="menu__link menu__link_footer">ABOUT GAME</a></li>
+							<li class="menu__item menu__item_footer"><a href="#explore" class="menu__link menu__link_footer">Explore</a></li>
+							<li class="menu__item menu__item_footer"><a href="#news" class="menu__link menu__link_footer">news</a></li>
+							<li class="menu__item menu__item_footer"><a href="#faq" class="menu__link menu__link_footer">FAQ</a></li>
+						</ul>
+					</div>
+					<div class="footer__leng">Language:<div class="footer__leng-span">ENGLISH</div>
+						<div class="footer__leng-befor">
+							<div class="footer__leng-leng">ENGLISH</div>
+							<div class="footer__leng-leng">русский</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__text">
+					<p>Download of this product is subject to the PlayStation Network Terms of Service and our Software Usage Terms plus any specific additional conditions applying to this product. If you do not wish to accept these terms, do not download this product. See Terms of Service for more important information.</p>
+				</div>
+				<div class="footer__logo"><img src="../ragnarok/img/logoPS.png" alt="logoPS"></div>
+				<div class="footer__year">2022</div>
+				<div class="footer__diskr">Developed by Tomkovich. All rights reserved</div>
 			</div>
 		</footer>
 		<script src="../ragnarok/js/script.js"></script>

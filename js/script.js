@@ -37,6 +37,64 @@
 
 /*=============animItems================*/
 
+/*====================scroll========================*/
+const menuLink = document.querySelectorAll(".menu__link")
+menuLink.forEach((link) => {
+   link.addEventListener('click', scrolSection)
+})
+
+function scrolSection(e) {
+   e.preventDefault();
+
+   const href = e.currentTarget.getAttribute("href");
+   console.log(href);
+
+   if (!href && !href.startsWith("#")) return;
+
+   const section = href.slice(1);
+   const top = document.getElementById(section)?.offsetTop || 0;
+   window.scrollTo({ top, behavior: "smooth" });
+}
+
+/*====================scroll========================*/
+
+/*====================count================== ======*/
+const formatVal = (value) => ( value <10 ? `0${value}` : value);
+
+function countdown(to) {
+   const id = setInterval(() => {
+      let toCountDate = new Date(to);
+      let currentDate = new Date();
+   
+      let totalSeconds = Math.floor((toCountDate - currentDate) / 1000);
+      if(totalSeconds < 0) {
+         clearInterval(id);
+         return;
+      } 
+      const seconds = totalSeconds % 60;
+      const minutes = Math.floor((totalSeconds / 60) % 60);
+      const hours = Math.floor((totalSeconds / 3600) % 24);
+      const days = Math.floor(totalSeconds / 86400)
+      console.log(seconds, minutes, hours, days);
+
+      const secondsElem = document.getElementById('seconds')
+      secondsElem.innerHTML = formatVal(seconds);
+
+      const minutesElem = document.getElementById('minutes')
+      minutesElem.innerHTML = formatVal(minutes);
+
+      const hoursElem = document.getElementById('hours')
+      hoursElem.innerHTML = formatVal(hours);
+
+      const daysElem = document.getElementById('days')
+      daysElem.innerHTML = formatVal(days);
+   }, 1000)
+  
+}
+countdown("28 feb 2023")
+
+/*====================count========================*/
+
 /*====================hamb==========================*/
 
 const menu = document.querySelector('.menu');
@@ -113,7 +171,7 @@ const fn = document.querySelectorAll('.fn');
 // import "swiper/swiper.min.css";
 // import "../styles/styles.scss";
 
-import Swiper from "swiper";
+//import Swiper from "swiper";
 // import Swiper from 'swiper/dist/js/swiper.min.js';
 // const swiper = new Swiper('swiper', {
 //    // Optional parameters
@@ -137,17 +195,30 @@ import Swiper from "swiper";
 //    },
 // });
 
-const initSlider = () => {
-   new Swiper(".swiper", {
-     loop: true,
-     slidesPerView: 3,
-     spaceBetween: 20,
-     initialSlide: 2,
-     navigation: {
-       nextEl: ".swiper-button-next",
-       prevEl: ".swiper-button-prev",
-     },
-   });
- };
+// const initSlider = () => {
+//    new Swiper(".swiper", {
+//      loop: true,
+//      slidesPerView: 3,
+//      spaceBetween: 20,
+//      initialSlide: 2,
+//      navigation: {
+//        nextEl: ".swiper-button-next",
+//        prevEl: ".swiper-button-prev",
+//      },
+//    });
+//  };
 
 /*===============swiper================================*/
+
+/*===============FAQ===================================*/
+const pluss = document.querySelectorAll('.faq__top')
+pluss.forEach(plus => {
+   plus.addEventListener('click', () => {
+      const parentPlus = plus.closest(".faq__item")
+      parentPlus.classList.toggle('open-qwesc')
+      console.log(parentPlus);
+   })
+});
+console.log(pluss);
+
+/*===============FAQ===================================*/
