@@ -12,6 +12,9 @@ $red: #ff4136;
 img {
 	max-width: 100%;
 }
+.hiden {
+	opacity: 0;
+}
 .wraper {
 	display: flex;
 	flex-direction: column;
@@ -330,6 +333,165 @@ main {
 	transform: translateX(0);
 }
 
+//====================modal=================//
+.modal {
+	position: fixed;
+	z-index: 999;
+	opacity: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0s;
+	&__body {
+		padding: 32px 32px 20px 32px;
+		width: 470px;
+		height: 565.19px;
+		background: linear-gradient(180deg, #30373f 0%, #000000 99.82%);
+		border-radius: 12px;
+		position: relative;
+		z-index: 10;
+		&:before {
+			display: block;
+			position: absolute;
+			content: "";
+			width: 448px;
+			height: 445.79px;
+			background: url(../img/modal.png) no-repeat center/cover;
+			bottom: 27px;
+			left: 0;
+			z-index: -1;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 21px;
+		text-align: center;
+		color: $fiolet;
+		margin-bottom: 20px;
+	}
+
+	&__subtitle {
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 21px;
+		text-align: center;
+		margin-bottom: 19px;
+		color: $white;
+	}
+
+	&__form {
+	}
+}
+.form {
+	&__grup {
+		display: flex;
+		flex-direction: column;
+	}
+	&__flex {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__checkbox {
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+		margin-bottom: 7px;
+	}
+	&__checkbox1 {
+		cursor: pointer;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		&:checked {
+			
+			& + .form__check {
+				
+				&::before {
+					content: "✓";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+			
+		}
+	}
+
+	&__check {
+		position: relative;
+		width: 25px;
+		height: 25px;
+		background: #30373f;
+		border-radius: 6px;
+		margin-right: 15px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 12px;
+		color: #d9d9d9;
+		margin-bottom: 13px;
+	}
+
+	&__sum {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 17px;
+	}
+
+	&__total {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	&__prise {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	&__btn {
+		@include button;
+		@include hoverViolet;
+		width: 100%;
+	}
+}
+.full {
+}
+.red {
+	color: $red;
+}
+label {
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	//text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-bottom: 6px;
+}
+input {
+	padding: 15px;
+	background: #30373f;
+	border-radius: 6px;
+	margin-bottom: 16px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 12px;
+	text-transform: uppercase;
+	color: #ffffff;
+}
 //===========editions=================//
 .editions {
 	padding: 53px 0;
@@ -560,6 +722,11 @@ main {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 2;
+	}
+	@media (any-hover: hover) {
+		&__info:hover {
+			opacity: 1;
+		}
 	}
 
 	&__title2 {
@@ -988,45 +1155,55 @@ main {
 		}
 	}
 
-	&__leng {
+	&__lengs {
 		display: flex;
+		align-items: center;
+		position: relative;
 		font-weight: 700;
 		font-size: 14px;
 		line-height: 193%;
 		text-transform: uppercase;
 		color: $akcent;
-		position: relative;
+	}
+	&__leng {
 	}
 
 	&__leng-span {
 		color: $white;
 		position: relative;
 		cursor: pointer;
-			}
+	}
+
 	@media (any-hover: hover) {
-		&__leng:hover {
-				opacity: 0.7;
-				.footer__leng-befor {
-					opacity: 1;
-					background-color: #fff;
-				}
+		&__lengs:hover {
+			opacity: 0.7;
+			.footer__leng-befor {
+				transform: scale(1);
 			}
 		}
+	}
 
 	&__leng-befor {
 		position: absolute;
-		background-color: rgb(224, 67, 67);
+		background-color: rgb(12, 10, 10);
 		padding: 5px;
 		border-radius: 6px;
 		bottom: -60px;
 		left: 76px;
-		//opacity: 0;
+		transform: scale(0);
 		transition: all 0.3s ease 0s;
 	}
 
 	&__leng-leng {
 		font-weight: 600;
 		font-size: 12px;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&__leng-leng:hover {
+			color: $fiolet;
+		}
 	}
 
 	&__text {

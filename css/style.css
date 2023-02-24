@@ -77,6 +77,10 @@ img {
   max-width: 100%;
 }
 
+.hiden {
+  opacity: 0;
+}
+
 .wraper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -598,6 +602,217 @@ main {
           transform: translateX(0);
 }
 
+.modal {
+  position: fixed;
+  z-index: 999;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.modal__body {
+  padding: 32px 32px 20px 32px;
+  width: 470px;
+  height: 565.19px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#30373f), color-stop(99.82%, #000000));
+  background: -webkit-linear-gradient(top, #30373f 0%, #000000 99.82%);
+  background: -o-linear-gradient(top, #30373f 0%, #000000 99.82%);
+  background: linear-gradient(180deg, #30373f 0%, #000000 99.82%);
+  -webkit-border-radius: 12px;
+          border-radius: 12px;
+  position: relative;
+  z-index: 10;
+}
+
+.modal__body:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 448px;
+  height: 445.79px;
+  background: url(../img/modal.png) no-repeat center/cover;
+  bottom: 27px;
+  left: 0;
+  z-index: -1;
+}
+
+.modal__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #8856d9;
+  margin-bottom: 20px;
+}
+
+.modal__subtitle {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: center;
+  margin-bottom: 19px;
+  color: #ffffff;
+}
+
+.form__grup {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__checkbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  margin-bottom: 7px;
+}
+
+.form__checkbox1 {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.form__checkbox1:checked + .form__check::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.form__check {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: #30373f;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  margin-right: 15px;
+}
+
+.form__text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #d9d9d9;
+  margin-bottom: 13px;
+}
+
+.form__sum {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.form__total {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.form__prise {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.form__btn {
+  padding: 11px 37px;
+  background-color: #8856d9;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 118%;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 100%;
+}
+
+.form__btn:hover {
+  background: #9468da;
+}
+
+.form__btn:active {
+  background: #6039a0;
+}
+
+.red {
+  color: #ff4136;
+}
+
+label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 15px;
+  background: #30373f;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
 .editions {
   padding: 53px 0;
 }
@@ -984,6 +1199,12 @@ main {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+@media (any-hover: hover) {
+  .aboutgame__info:hover {
+    opacity: 1;
+  }
 }
 
 .aboutgame__title2 {
@@ -1630,17 +1851,21 @@ main {
           transform: translateX(0);
 }
 
-.footer__leng {
+.footer__lengs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
   font-weight: 700;
   font-size: 14px;
   line-height: 193%;
   text-transform: uppercase;
   color: #8c96a0;
-  position: relative;
 }
 
 .footer__leng-span {
@@ -1650,23 +1875,27 @@ main {
 }
 
 @media (any-hover: hover) {
-  .footer__leng-span:hover {
+  .footer__lengs:hover {
     opacity: 0.7;
   }
-  .footer__leng-span:hover .footer__leng-befor {
-    opacity: 1;
-    background-color: #fff;
+  .footer__lengs:hover .footer__leng-befor {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 .footer__leng-befor {
   position: absolute;
-  background-color: #000;
+  background-color: #0c0a0a;
   padding: 5px;
   -webkit-border-radius: 6px;
           border-radius: 6px;
   bottom: -60px;
   left: 76px;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1675,6 +1904,16 @@ main {
 .footer__leng-leng {
   font-weight: 600;
   font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+@media (any-hover: hover) {
+  .footer__leng-leng:hover {
+    color: #8856d9;
+  }
 }
 
 .footer__text {

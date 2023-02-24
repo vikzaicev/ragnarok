@@ -47,7 +47,7 @@ function scrolSection(e) {
    e.preventDefault();
 
    const href = e.currentTarget.getAttribute("href");
-   console.log(href);
+   //console.log(href);
 
    if (!href && !href.startsWith("#")) return;
 
@@ -75,8 +75,7 @@ function countdown(to) {
       const minutes = Math.floor((totalSeconds / 60) % 60);
       const hours = Math.floor((totalSeconds / 3600) % 24);
       const days = Math.floor(totalSeconds / 86400)
-      console.log(seconds, minutes, hours, days);
-
+      
       const secondsElem = document.getElementById('seconds')
       secondsElem.innerHTML = formatVal(seconds);
 
@@ -114,6 +113,24 @@ function hamburger() {
 };
 
 /*====================hamb=======================*/
+
+/*===============video=================================*/
+const video = document.querySelector('.aboutgame__video')
+const videoBtn = document.querySelector('.aboutgame__btn')
+let pley = false;
+
+videoBtn.addEventListener('click', showVideo)
+
+function showVideo({target}) {
+   pley = !pley;
+   const info = target.parentElement;
+   
+   info.classList.toggle('hiden', pley)
+   target.innerText = !pley ? 'PLAY' : 'PAUSE';
+   pley ? video.play() : video.pause();
+}
+
+/*===============video=================================*/
 
 /*===============tab===================================*/
 
