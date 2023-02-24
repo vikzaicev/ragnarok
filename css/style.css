@@ -576,6 +576,7 @@ main {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   opacity: 0;
+  visibility: hidden;
 }
 
 .modal__body {
