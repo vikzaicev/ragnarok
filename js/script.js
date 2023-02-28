@@ -59,23 +59,23 @@ function scrolSection(e) {
 /*====================scroll========================*/
 
 /*====================count================== ======*/
-const formatVal = (value) => ( value <10 ? `0${value}` : value);
+const formatVal = (value) => (value < 10 ? `0${value}` : value);
 
 function countdown(to) {
    const id = setInterval(() => {
       let toCountDate = new Date(to);
       let currentDate = new Date();
-   
+
       let totalSeconds = Math.floor((toCountDate - currentDate) / 1000);
-      if(totalSeconds < 0) {
+      if (totalSeconds < 0) {
          clearInterval(id);
          return;
-      } 
+      }
       const seconds = totalSeconds % 60;
       const minutes = Math.floor((totalSeconds / 60) % 60);
       const hours = Math.floor((totalSeconds / 3600) % 24);
       const days = Math.floor(totalSeconds / 86400)
-      
+
       const secondsElem = document.getElementById('seconds')
       secondsElem.innerHTML = formatVal(seconds);
 
@@ -88,9 +88,9 @@ function countdown(to) {
       const daysElem = document.getElementById('days')
       daysElem.innerHTML = formatVal(days);
    }, 1000)
-  
+
 }
-countdown("28 feb 2023")
+countdown("28 apr 2023")
 
 /*====================count========================*/
 
@@ -100,7 +100,7 @@ const menu = document.querySelector('.menu');
 const hamb = document.querySelector('.header__hamb');
 //const body = document.querySelector('body');
 //const popup = document.querySelector('.header__popup');
-console.log(hamb, menu);
+//console.log(hamb, menu);
 
 //popup.append(menu.cloneNode(1));
 
@@ -121,10 +121,10 @@ let pley = false;
 
 videoBtn.addEventListener('click', showVideo)
 
-function showVideo({target}) {
+function showVideo({ target }) {
    pley = !pley;
    const info = target.parentElement;
-   
+
    info.classList.toggle('hiden', pley)
    target.innerText = !pley ? 'PLAY' : 'PAUSE';
    pley ? video.play() : video.pause();
@@ -154,33 +154,64 @@ const fn = document.querySelectorAll('.fn');
 /*===============tab===================================*/
 
 /*===============popup=================================*/
-//const body = document.body
-// const popup = document.querySelector('.popup')
-// const settingsBtn = document.querySelector('.settings')
-// const settingsCloseBtn = document.querySelector('.settings__bott')
+const body = document.body
+const modal = document.querySelector('.modal')
+const modalBg = document.querySelector('.modal__bg')
+const openModalBtn = document.querySelectorAll('.mod')
+const CloseModalBtn = document.querySelector('.modal__close')
+const subtitleModal = document.querySelector('.modal__subtitle')
+const priseModal = document.querySelector('.form__prise')
 
-// settingsBtn.addEventListener('click', openPopup)
+const values = [
+   {
+      title: 'Standard Edition',
+      prise: '19.99$'
+   },
+   {
+      title: 'Standard Edition',
+      prise: '18.99$'
+   },
+   {
+      title: 'Digital Deluxe Edition',
+      prise: '26.99$'
+   }
+]
 
-// function openPopup() {
-//   popup.classList.add('active')
-//   body.classList.add('scroll')
-// }
+openModalBtn.forEach((btn => {
+   btn.addEventListener('click', openModal)
 
-// settingsCloseBtn.addEventListener('click', closePopup)
+}))
 
-// function closePopup() {
-//   popup.classList.remove('active')
-//   body.classList.remove('scroll')
-// }
 
-// window.addEventListener('click', closePopupWin)
+function openModal(e) {
+   const ind = e.target.getAttribute('data-set')
+   if(!ind) return;
+   const {title, prise} = values[ind]
+   subtitleModal.innerText = title;
+   priseModal.innerText = prise;
+   modal.classList.add('active')
+   body.classList.add('scroll')
+   modalBg.classList.add('active')
+  
+}
 
-// function closePopupWin(event) {
-//   if (event.target == popup) {
-//     popup.classList.remove('active')
-//     body.classList.remove('scroll')
-//   }
-// }
+CloseModalBtn.addEventListener('click', closeModal)
+
+function closeModal() {
+   modal.classList.remove('active')
+   body.classList.remove('scroll')
+   modalBg.classList.remove('active')
+}
+
+window.addEventListener('click', closePopupWin)
+
+function closePopupWin(event) {
+   if (event.target == modalBg) {
+      modal.classList.remove('active')
+      body.classList.remove('scroll')
+      modalBg.classList.remove('active')
+   }
+}
 
 /*===============popup=================================*/
 
@@ -236,6 +267,6 @@ pluss.forEach(plus => {
       console.log(parentPlus);
    })
 });
-console.log(pluss);
 
+/*===============FAQ===================================*/
 /*===============FAQ===================================*/

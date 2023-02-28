@@ -30,7 +30,7 @@ body {
 	font-weight: 400;
 	color: $white;
 }
-body.noscrol {
+body.scroll {
 	overflow: hidden;
 }
 
@@ -325,7 +325,13 @@ main {
 
 	&__lon {
 		text-transform: uppercase;
+		transition: all 0.3s ease 0s;
 		color: #ffffff;
+		@media(any-hover: hover) {
+			&:hover {
+				color: $fiolet;
+			}
+		}
 	}
 }
 .menu.open {
@@ -334,6 +340,10 @@ main {
 }
 
 //====================modal=================//
+.modal.active {
+	opacity: 1;
+	visibility: visible;
+}
 .modal {
 	position: fixed;
 	z-index: 999;
@@ -344,6 +354,27 @@ main {
 	transition: all 0.3s ease 0s;
 	opacity: 0;
 	visibility: hidden;
+	overflow: auto;
+
+	&__bg {
+		position: fixed;
+	z-index: 990;
+	opacity: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+		transition: all 0.3s ease 0s;
+		background-color: #000;
+	 opacity: 0;
+	 visibility: hidden;
+	}
+
+	&__bg.active {
+		opacity: 0.75;
+		visibility: visible;
+	}
+
 	&__body {
 		padding: 32px 32px 20px 32px;
 		width: 470px;
@@ -363,8 +394,15 @@ main {
 			left: 0;
 			z-index: -1;
 		}
-	}
+			}
 
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		padding: 5px;
+	}
 	&__title {
 		font-weight: 700;
 		font-size: 18px;
@@ -412,9 +450,7 @@ main {
 		left: 0;
 		opacity: 0;
 		&:checked {
-			
 			& + .form__check {
-				
 				&::before {
 					content: "✓";
 					position: absolute;
@@ -423,7 +459,6 @@ main {
 					transform: translate(-50%, -50%);
 				}
 			}
-			
 		}
 	}
 
@@ -434,6 +469,7 @@ main {
 		background: #30373f;
 		border-radius: 6px;
 		margin-right: 15px;
+		pointer-events: none;
 	}
 
 	&__text {
@@ -670,6 +706,11 @@ input {
 		padding: 13px 19px;
 		@media (max-width: 424px) {
 			padding: 10px 12px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				@include hoverOrange;
+			}
 		}
 	}
 
@@ -941,6 +982,11 @@ input {
 
 	&__item-btn {
 		@include button($red);
+		@media (any-hover: hover) {
+			&:hover {
+				@include hoverOrange;
+			}
+		}
 	}
 }
 
