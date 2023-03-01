@@ -185,14 +185,14 @@ openModalBtn.forEach((btn => {
 
 function openModal(e) {
    const ind = e.target.getAttribute('data-set')
-   if(!ind) return;
-   const {title, prise} = values[ind]
+   if (!ind) return;
+   const { title, prise } = values[ind]
    subtitleModal.innerText = title;
    priseModal.innerText = prise;
    modal.classList.add('active')
    body.classList.add('scroll')
    modalBg.classList.add('active')
-  
+
 }
 
 CloseModalBtn.addEventListener('click', closeModal)
@@ -268,5 +268,28 @@ pluss.forEach(plus => {
    })
 });
 
-/*===============FAQ===================================*/
-/*===============FAQ===================================*/
+/*===============explore===============================*/
+const span1 = document.querySelector('.span1')
+const leftBtn = document.querySelectorAll('.explore__left')
+const rihtBtn = document.querySelectorAll('.explore__riht')
+//const dataSet = document.querySelectorAll('[data-set]')
+
+//console.log(lefts);
+
+leftBtn.forEach(left => {
+   left.addEventListener('click', addActive)
+})
+rihtBtn.forEach(riht => {
+   riht.addEventListener('click', addActive)
+})
+
+function addActive(e) {
+   const parentEl = e.target.closest('.explore__item')
+   const dataSet = parentEl.querySelectorAll('[data-set]')
+   dataSet.forEach(el => {
+      el.classList.toggle('active1')
+   })
+}
+
+
+/*===============explore===============================*/
