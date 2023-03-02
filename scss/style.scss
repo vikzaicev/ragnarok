@@ -57,6 +57,9 @@ main {
 		top: 0;
 		right: 0;
 		z-index: -1;
+		@media (max-width: 1500px) {
+			right: -100px;
+		}
 		@media (max-width: 1300px) {
 			left: 0;
 		}
@@ -90,6 +93,9 @@ main {
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
+		@media (max-width: 560px) {
+			flex-direction: column-reverse;
+		}
 	}
 	&__left {
 		display: flex;
@@ -343,6 +349,7 @@ main {
 .modal.active {
 	opacity: 1;
 	visibility: visible;
+	overflow: auto;
 }
 .modal {
 	position: fixed;
@@ -354,7 +361,7 @@ main {
 	transition: all 0.3s ease 0s;
 	opacity: 0;
 	visibility: hidden;
-	
+
 	&__bg {
 		position: fixed;
 		z-index: 990;
@@ -377,12 +384,12 @@ main {
 	&__body {
 		padding: 32px 32px 20px 32px;
 		width: 470px;
-		//height: 565.19px;
+		height: 565.19px;
 		background: linear-gradient(180deg, #30373f 0%, #000000 99.82%);
 		border-radius: 12px;
 		position: relative;
 		z-index: 10;
-		
+
 		&:before {
 			display: block;
 			position: absolute;
@@ -393,6 +400,14 @@ main {
 			bottom: 26px;
 			left: 0;
 			z-index: -1;
+			@media (max-width: 470px) {
+				width: 390px;
+				height: 405px;
+			}
+			@media (max-width: 360px) {
+				width: 350px;
+				height: 383px;
+			}
 		}
 		@media (max-width: 530px) {
 			padding: 18px;
@@ -400,7 +415,14 @@ main {
 		}
 		@media (max-width: 470px) {
 			padding: 8px;
-			width: 100%;
+			width: 360px;
+			height: 505.19px;
+		}
+		@media (max-width: 360px) {
+			height: 100vh;
+		}
+		@media (max-width: 330px) {
+			width: 320px;
 		}
 	}
 
@@ -514,7 +536,9 @@ main {
 	}
 }
 .full {
-	width: 90%;
+}
+.smal {
+	width: 47%;
 }
 .red {
 	color: $red;
@@ -540,7 +564,7 @@ input {
 	color: #ffffff;
 	@media (max-width: 480px) {
 		padding: 8px;
-			}
+	}
 }
 //===========editions=================//
 .editions {
@@ -548,7 +572,7 @@ input {
 	@media (max-width: 375px) {
 		padding: 10px 0;
 	}
-	
+
 	&__title {
 		@include title2;
 		margin-bottom: 31px;
@@ -562,6 +586,22 @@ input {
 			flex-wrap: wrap;
 		}
 	}
+	&__items.active {
+		.editions__item {
+			&:first-child {
+				transform: translateX(0);
+				transition: all 0.3s ease 0s;
+			}
+			&:nth-child(2) {
+				transform: translateX(0);
+				transition: all 0.6s ease 0s;
+			}
+			&:last-child {
+				transform: translateX(0);
+				transition: all 0.9s ease 0s;
+			}
+		}
+	}
 
 	&__item {
 		display: flex;
@@ -571,6 +611,7 @@ input {
 		margin: 10px;
 		background: linear-gradient(180deg, #141615 0%, #1c2023 100%);
 		border-radius: 6px;
+		transform: translateX(-500%);
 	}
 
 	&__image {
@@ -628,6 +669,10 @@ input {
 		line-height: 118%;
 		padding: 7px 19px;
 	}
+}
+.editions__items.active:first-child {
+	display: none;
+	background-color: #fff;
 }
 
 //--------------------dualsense-------------------//
@@ -757,8 +802,13 @@ input {
 .aboutgame {
 	position: relative;
 	&__contener {
+		transform: scale3d(0, 1, 0);
+		transition: all 0.5s ease 0.2s;
 	}
 
+	&__contener.active {
+		transform:scale3d(1, 1, 1)
+	}
 	&__title {
 		@include title2;
 		margin-bottom: 30px;
@@ -817,9 +867,6 @@ input {
 .explore {
 	padding: 40px 0;
 
-	&__contener {
-	}
-
 	&__title {
 		@include title2;
 		margin-bottom: 30px;
@@ -844,6 +891,9 @@ input {
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 22px;
+		@media (max-width: 730px) {
+			margin-bottom: 82px;
+		}
 	}
 	&__item-box {
 		display: flex;
@@ -868,25 +918,8 @@ input {
 		background: #30373f;
 		border-radius: 0 12px 12px 0;
 	}
-	
 
-	// input {
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	position: absolute;
-	// 	opacity: 0;
-	// 	z-index: 2;
-	// 	cursor: pointer;
-	// 	&:checked {
-	// 		.span1 {
-	// 			transform: translateX(28px);
-	// 			color: #ff4136;
-	// 		}
-	// 		transform: translateX(28px);
-	// 	}
-	// }
-
-	.span1 {
+		.span1 {
 		position: absolute;
 		width: 18px;
 		height: 17.91px;
@@ -907,6 +940,10 @@ input {
 		font-size: 20px;
 		line-height: 120%;
 		text-align: center;
+		@media (max-width: 730px) {
+			margin-top: -67px;
+			margin-bottom: 93px;
+		}
 	}
 	&__item-text.active1 {
 		font-size: 14px;
@@ -924,8 +961,11 @@ input {
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
-		column-gap: 5%;
+		column-gap: 100%;
+		width: 82%;
+		margin: auto;
 		margin-bottom: 40px;
+		transition: all 0.3s ease 0s;
 		&_reverse {
 			flex-direction: row-reverse;
 		}
@@ -934,6 +974,9 @@ input {
 			align-items: center;
 			margin-top: 50px;
 		}
+	}
+	&__item-info.active {
+		column-gap: 5%;
 	}
 
 	&__item-image {
@@ -951,7 +994,7 @@ input {
 		height: 300px;
 		border-radius: 12px;
 		bottom: 0;
-		left: 25%;
+		left: 50%;
 		transform: translateX(-50%);
 		z-index: -1;
 		background: url(../img/image1bg.png) no-repeat center/cover;
@@ -965,13 +1008,13 @@ input {
 			width: 61px;
 			height: 140px;
 			bottom: 0;
-			left: 25%;
+			left: 50%;
 			transform: translateX(-50%);
 			background: rgba(255, 65, 54, 0.8);
 			filter: blur(75px);
 			transform: matrix(-0.03, -1, 1, -0.03, 0, 0);
 			@media (max-width: 1203px) {
-				left: 40%;
+				left: 50%;
 			}
 			@media (max-width: 810px) {
 				left: 50%;
@@ -988,10 +1031,10 @@ input {
 		max-width: unset;
 		position: absolute;
 		bottom: 0;
-		left: 25%;
-		transform: translateX(-43%);
+		left: 50%;
+		transform: translateX(-50%);
 		@media (max-width: 1203px) {
-			left: 40%;
+			left: 50%;
 		}
 		@media (max-width: 810px) {
 			left: 50%;
@@ -1024,8 +1067,6 @@ input {
 		}
 	}
 }
-
-
 
 .active1 {
 	display: block;
@@ -1132,6 +1173,7 @@ input {
 
 	&__item {
 		margin-top: 40px;
+		transform: translateX(-150%);
 	}
 	&__item.open-qwesc {
 		.faq__botom {
@@ -1141,6 +1183,19 @@ input {
 		.faq__plus {
 			&::before {
 				transform: rotate(45deg);
+			}
+		}
+	}
+	&__items.active {
+		.faq__item {
+			&:first-child {
+				transform: translateX(0);
+				transition: all 0.5s ease 0s;
+			}
+			
+			&:last-child {
+				transform: translateX(0);
+				transition: all 1s ease 0s;
 			}
 		}
 	}
@@ -1194,6 +1249,9 @@ input {
 		transition: all 0.3s ease 0s;
 		opacity: 0;
 		height: 0;
+	}
+	&__botom p {
+		pointer-events: none;
 	}
 
 	&__span {
@@ -1313,8 +1371,7 @@ input {
 		text-align: center;
 	}
 }
-.contener {
-}
+
 .menu {
 	&__list {
 		&_footer {
