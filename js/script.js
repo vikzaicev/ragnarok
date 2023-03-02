@@ -1,5 +1,4 @@
 /*=============animItems================*/
-
 const animItems = document.querySelectorAll('.amim-items');
 if (animItems.length > 0) {
    window.addEventListener("scroll", animOnScroll);
@@ -11,7 +10,7 @@ if (animItems.length > 0) {
          const animStart = 4;
 
          let animItemPoint = window.innerHeight - animItemHeight / animStart;
-         //*console.log(animItemPoint);
+         
          if (animItemHeight > window.innerHeight) {
             animItemPoint = window.innerHeight - window.innerHeight / animStart;
          }
@@ -47,8 +46,7 @@ function scrolSection(e) {
    e.preventDefault();
 
    const href = e.currentTarget.getAttribute("href");
-   //console.log(href);
-
+  
    if (!href && !href.startsWith("#")) return;
 
    const section = href.slice(1);
@@ -272,9 +270,6 @@ pluss.forEach(plus => {
 const span1 = document.querySelector('.span1')
 const leftBtn = document.querySelectorAll('.explore__left')
 const rihtBtn = document.querySelectorAll('.explore__riht')
-//const dataSet = document.querySelectorAll('[data-set]')
-
-//console.log(lefts);
 
 leftBtn.forEach(left => {
    left.addEventListener('click', addActive)
@@ -290,6 +285,5 @@ function addActive(e) {
       el.classList.toggle('active1')
    })
 }
-
 
 /*===============explore===============================*/
