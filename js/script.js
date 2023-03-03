@@ -1,4 +1,5 @@
 /*=============animItems================*/
+
 const animItems = document.querySelectorAll('.amim-items');
 if (animItems.length > 0) {
    window.addEventListener("scroll", animOnScroll);
@@ -10,8 +11,7 @@ if (animItems.length > 0) {
          const animStart = 4;
 
          let animItemPoint = window.innerHeight - animItemHeight / animStart;
-         
-         if (animItemHeight > window.innerHeight) {
+                  if (animItemHeight > window.innerHeight) {
             animItemPoint = window.innerHeight - window.innerHeight / animStart;
          }
          if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
@@ -188,7 +188,7 @@ function openModal(e) {
    subtitleModal.innerText = title;
    priseModal.innerText = prise;
    modal.classList.add('active')
-   body.classList.add('scroll')
+   //body.classList.add('scroll')
    modalBg.classList.add('active')
 
 }
