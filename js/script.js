@@ -58,13 +58,13 @@ function scrolSection(e) {
 
 /*====================count================== ======*/
 const formatVal = (value) => (value < 10 ? `0${value}` : value);
-
+const dateNew = Math.floor(new Date()/1000 + 186400)
 function countdown(to) {
    const id = setInterval(() => {
       let toCountDate = new Date(to);
-      let currentDate = new Date();
-
-      let totalSeconds = Math.floor((toCountDate - currentDate) / 1000);
+      let currentDate = new Date()/1000;
+     
+      let totalSeconds = Math.floor(to - currentDate );
       if (totalSeconds < 0) {
          clearInterval(id);
          return;
@@ -88,7 +88,7 @@ function countdown(to) {
    }, 1000)
 
 }
-countdown("28 apr 2023")
+countdown(dateNew)
 
 /*====================count========================*/
 
@@ -188,7 +188,7 @@ function openModal(e) {
    subtitleModal.innerText = title;
    priseModal.innerText = prise;
    modal.classList.add('active')
-   //body.classList.add('scroll')
+   body.classList.add('scroll')
    modalBg.classList.add('active')
 
 }
