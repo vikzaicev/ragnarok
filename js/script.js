@@ -11,7 +11,7 @@ if (animItems.length > 0) {
          const animStart = 4;
 
          let animItemPoint = window.innerHeight - animItemHeight / animStart;
-                  if (animItemHeight > window.innerHeight) {
+         if (animItemHeight > window.innerHeight) {
             animItemPoint = window.innerHeight - window.innerHeight / animStart;
          }
          if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
@@ -25,7 +25,7 @@ if (animItems.length > 0) {
    }
    function offset(el) {
       const rect = el.getBoundingClientRect();
-      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
    }
@@ -46,7 +46,7 @@ function scrolSection(e) {
    e.preventDefault();
 
    const href = e.currentTarget.getAttribute("href");
-  
+
    if (!href && !href.startsWith("#")) return;
 
    const section = href.slice(1);
@@ -58,13 +58,13 @@ function scrolSection(e) {
 
 /*====================count================== ======*/
 const formatVal = (value) => (value < 10 ? `0${value}` : value);
-const dateNew = Math.floor(new Date()/1000 + 186400)
+const dateNew = Math.floor(new Date() / 1000 + 186400)
 function countdown(to) {
    const id = setInterval(() => {
       let toCountDate = new Date(to);
-      let currentDate = new Date()/1000;
-     
-      let totalSeconds = Math.floor(to - currentDate );
+      let currentDate = new Date() / 1000;
+
+      let totalSeconds = Math.floor(to - currentDate);
       if (totalSeconds < 0) {
          clearInterval(id);
          return;
@@ -214,45 +214,45 @@ function closePopupWin(event) {
 /*===============popup=================================*/
 
 /*===============swiper================================*/
-// import "swiper/swiper.min.css";
-// import "../styles/styles.scss";
 
-//import Swiper from "swiper";
-// import Swiper from 'swiper/dist/js/swiper.min.js';
-// const swiper = new Swiper('swiper', {
-//    // Optional parameters
-//    direction: 'vertical',
-//    loop: true,
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
-//    // If we need pagination
-//    // pagination: {
-//    //    el: '.swiper-pagination',
-//    // },
 
-//    // Navigation arrows
-//    navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//    },
+const swiper = new Swiper('swiper', {
+   // Optional parameters
+   direction: 'vertical',
+   loop: true,
 
-//    // And if we need scrollbar
-//    scrollbar: {
-//       el: '.swiper-scrollbar',
-//    },
-// });
+   // If we need pagination
+   // pagination: {
+   //    el: '.swiper-pagination',
+   // },
+
+   // Navigation arrows
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+   },
+
+   // And if we need scrollbar
+   // scrollbar: {
+   //    el: '.swiper-scrollbar',
+   // },
+});
 
 // const initSlider = () => {
 //    new Swiper(".swiper", {
-//      loop: true,
-//      slidesPerView: 3,
-//      spaceBetween: 20,
-//      initialSlide: 2,
-//      navigation: {
-//        nextEl: ".swiper-button-next",
-//        prevEl: ".swiper-button-prev",
-//      },
+//       loop: true,
+//       slidesPerView: 3,
+//       spaceBetween: 20,
+//       initialSlide: 2,
+//       navigation: {
+//          nextEl: ".swiper-button-next",
+//          prevEl: ".swiper-button-prev",
+//       },
 //    });
-//  };
+// };
 
 /*===============swiper================================*/
 

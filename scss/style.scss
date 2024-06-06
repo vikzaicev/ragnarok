@@ -262,7 +262,9 @@ main {
 .menu {
 	opacity: 0;
 	transform: translateX(-1000px);
-	transition: opacity 0.2s, transform 0.2s;
+	transition:
+		opacity 0.2s,
+		transform 0.2s;
 	&__list {
 		display: flex;
 		@media (max-width: 1020px) {
@@ -349,7 +351,7 @@ main {
 .modal.active {
 	opacity: 1;
 	visibility: visible;
-	overflow: auto;
+	overflow-x: auto;
 }
 .modal {
 	position: fixed;
@@ -389,6 +391,7 @@ main {
 		border-radius: 12px;
 		position: relative;
 		z-index: 10;
+		overflow-x: auto;
 
 		&:before {
 			display: block;
@@ -807,7 +810,7 @@ input {
 	}
 
 	&__contener.active {
-		transform:scale3d(1, 1, 1)
+		transform: scale3d(1, 1, 1);
 	}
 	&__title {
 		@include title2;
@@ -1192,7 +1195,7 @@ input {
 				transform: translateX(0);
 				transition: all 0.5s ease 0s;
 			}
-			
+
 			&:last-child {
 				transform: translateX(0);
 				transition: all 1s ease 0s;
