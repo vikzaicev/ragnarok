@@ -1,5 +1,7 @@
 /*=============animItems================*/
 
+
+
 const animItems = document.querySelectorAll('.amim-items');
 if (animItems.length > 0) {
    window.addEventListener("scroll", animOnScroll);
@@ -215,44 +217,12 @@ function closePopupWin(event) {
 
 /*===============swiper================================*/
 
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+const mySlider = new Splide('#mySlider', {
+   rewind: true,
+   rewindSpeed: 1000,
+})
+mySlider.mount()
 
-
-const swiper = new Swiper('swiper', {
-   // Optional parameters
-   direction: 'vertical',
-   loop: true,
-
-   // If we need pagination
-   // pagination: {
-   //    el: '.swiper-pagination',
-   // },
-
-   // Navigation arrows
-   navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-   },
-
-   // And if we need scrollbar
-   // scrollbar: {
-   //    el: '.swiper-scrollbar',
-   // },
-});
-
-// const initSlider = () => {
-//    new Swiper(".swiper", {
-//       loop: true,
-//       slidesPerView: 3,
-//       spaceBetween: 20,
-//       initialSlide: 2,
-//       navigation: {
-//          nextEl: ".swiper-button-next",
-//          prevEl: ".swiper-button-prev",
-//       },
-//    });
-// };
 
 /*===============swiper================================*/
 

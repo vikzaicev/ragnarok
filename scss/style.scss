@@ -1083,24 +1083,36 @@ input {
 
 //--------------news--------------------//
 .news {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	padding: 30px 0;
 
 	&__title {
 		@include title2;
 	}
 }
-.swiper {
-	width: 700px;
-	height: 400px;
+.splide {
+	width: 900px;
+	//height: 500px;
+	@media (max-width: 1024px) {
+		max-width: 95%;
+		//max-height: 100%;
+	}
 }
-.swiper-wrapper {
+.splide__track {
+	//height: 500px;
 }
-.swiper-slide {
+.splide__slide {
 	background: linear-gradient(177.87deg, #30373f 41.63%, #141615 185.57%);
 	border-radius: 6px;
 	padding: 20px;
 	width: 615px;
-	height: 346px;
+	//height: 425px;
+	@media (max-width: 1024px) {
+		height: 100%;
+	}
 
 	&__top {
 		display: flex;
@@ -1150,9 +1162,12 @@ input {
 		font-size: 12px;
 		line-height: 142%;
 		color: #d9d9d9;
+		@media (max-width: 500px) {
+			flex: 0 0 45%;
+		}
 	}
 
-	&__btn {
+	.btn {
 		@include button($akcent);
 		//display: block;
 	}
